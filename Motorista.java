@@ -36,6 +36,10 @@ public class Motorista implements Relatorio {
     }
 
     public void setExperiencia(int experiencia) {
+        if(experiencia < 0){
+            System.out.println("Valor inválido!");
+            return;
+        }
         this.experiencia = experiencia;
     }
 
@@ -45,6 +49,7 @@ public class Motorista implements Relatorio {
 
     public void setDataExpiracaoCNH(LocalDate dataExpiracaoCNH) {
         this.dataExpiracaoCNH = dataExpiracaoCNH;
+        cnhValida = validarCNH();
     }
 
     public boolean isCnhValida() {
@@ -62,6 +67,7 @@ public class Motorista implements Relatorio {
             return false;
         }
     }
+    
     @Override
     public void gerarRelatorio() {
         System.out.println("=== Relatório do Motorista ===");
