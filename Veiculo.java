@@ -1,4 +1,3 @@
-
 public abstract class Veiculo {
     private String placa;
     private double capacidade;
@@ -6,11 +5,12 @@ public abstract class Veiculo {
     private String cor;
     private double velocidadeMedia;
 
-    public Veiculo(String placa, double capacidade, String tipoCombustivel, String cor) {
+    public Veiculo(String placa, double capacidade, String tipoCombustivel, String cor, double velocidadeMedia) {
         this.placa = placa;
         this.capacidade = capacidade;
         this.tipoCombustivel = tipoCombustivel;
         this.cor = cor;
+        this.velocidadeMedia = velocidadeMedia;
     }
 
     public String getPlaca() {

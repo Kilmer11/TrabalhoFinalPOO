@@ -1,14 +1,13 @@
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Viagem {
 	private Veiculo veiculo;
 	private Rota rota;
 	private String origem;
 	private String destino;
-	private Date dataSaida;
+	private LocalDate dataSaida;
 	
-	public Viagem(Rota rota, String origem, String destino, Date dataSaida) {
+	public Viagem(Rota rota, String origem, String destino, LocalDate dataSaida) {
 		this.rota = rota;
 		this.origem = origem;
 		this.destino = destino;
@@ -39,11 +38,11 @@ public class Viagem {
 		this.destino = destino;
 	}
 
-	public Date getDataSaida() {
+	public LocalDate getDataSaida() {
 		return dataSaida;
 	}
 
-	public void setDataSaida(Date dataSaida) {
+	public void setDataSaida(LocalDate dataSaida) {
 		this.dataSaida = dataSaida;
 	}
 

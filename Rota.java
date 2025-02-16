@@ -1,6 +1,4 @@
-
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Rota {
 	private double distancia;
