@@ -7,7 +7,6 @@ public class Motorista implements Relatorio {
     private LocalDate dataExpiracaoCNH;
     private boolean cnhValida;
 
-
     public Motorista(String nome, String numeroCNH, int experiencia, LocalDate dataExpiracaoCNH) {
         this.nome = nome;
         this.numeroCNH = numeroCNH;
@@ -78,6 +77,3 @@ public class Motorista implements Relatorio {
         System.out.println("CNH Válida: " + (cnhValida ? "Sim" : "Não"));
     }
 }
-
-
-
