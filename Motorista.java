@@ -1,19 +1,20 @@
-public class Motorista implements Relatorio{
+import java.time.LocalDate;
+
+public class Motorista implements Relatorio {
     private String nome;
     private String numeroCNH;
     private int experiencia;
-    private boolean prazoDeValidade;
+    private LocalDate dataExpiracaoCNH;
     private boolean cnhValida;
 
-    // Construtor
-    public Motorista(String nome, String numeroCNH, int experiencia, boolean cnhValida) {
+
+    public Motorista(String nome, String numeroCNH, int experiencia, LocalDate dataExpiracaoCNH) {
         this.nome = nome;
         this.numeroCNH = numeroCNH;
         this.experiencia = experiencia;
-        this.cnhValida = cnhValida;
+        this.dataExpiracaoCNH = dataExpiracaoCNH;
+        this.cnhValida = validarCNH(); 
     }
-
-    // Getters e Setters
     public String getNome() {
         return nome;
     }
@@ -38,29 +39,39 @@ public class Motorista implements Relatorio{
         this.experiencia = experiencia;
     }
 
+    public LocalDate getDataExpiracaoCNH() {
+        return dataExpiracaoCNH;
+    }
+
+    public void setDataExpiracaoCNH(LocalDate dataExpiracaoCNH) {
+        this.dataExpiracaoCNH = dataExpiracaoCNH;
+    }
+
     public boolean isCnhValida() {
         return cnhValida;
     }
 
-    public void setCnhValida(boolean cnhValida) {
-        this.cnhValida = cnhValida;
-    }
-
-    // Método para validar a CNH
+    // Método para validar a CNH com base na data de expiração
     public boolean validarCNH() {
-        // Aqui você pode colocar uma lógica mais complexa de validação
-        public boolean validarCNH() {
-            LocalDate dataAtual = LocalDate.now();
-            if (dataExpiracaoCNH.isAfter(dataAtual)) {
-                System.out.println("CNH válida.");
-                return true;
-            } else {
-                System.out.println("CNH expirada.");
-                return false;
-            }
+        LocalDate dataAtual = LocalDate.now();
+        if (dataExpiracaoCNH.isAfter(dataAtual)) {
+            System.out.println("CNH válida.");
+            return true;
+        } else {
+            System.out.println("CNH expirada.");
+            return false;
         }
-
-    // Método para exibir informações do motorista
-    gerarRelatorio();
+    }
+    @Override
+    public void gerarRelatorio() {
+        System.out.println("=== Relatório do Motorista ===");
+        System.out.println("Nome: " + nome);
+        System.out.println("Número da CNH: " + numeroCNH);
+        System.out.println("Experiência: " + experiencia + " anos");
+        System.out.println("Data de Expiração da CNH: " + dataExpiracaoCNH);
+        System.out.println("CNH Válida: " + (cnhValida ? "Sim" : "Não"));
+    }
 }
+
+
 
