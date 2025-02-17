@@ -88,7 +88,14 @@ public class App {
         op1.gerarRelatorio();
 
         System.out.println("--Rastreamento--");
-        Rastreamento ras1 = new Rastreamento(caminhao1, "Mombaça", LocalDate.of(2025, 12, 23), "20h");
+        Rastreamento ras1 = new Rastreamento(caminhao1, "Mombaça", LocalDate.of(2025, 12, 23), "21");
         ras1.exibirInformacoes();
+
+        System.out.println("--Armazem--");
+        ArrayList<Carga> cargas = new ArrayList<>();
+        cargas.add(carga2);
+        cargas.add(carga1);
+        Armazem armazem = new Armazem("Vila Esperança", 30000, cargas);
+        armazem.gerarRelatorio();
     }
 }
