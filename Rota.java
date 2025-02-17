@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Rota {
+public class Rota implements Relatorio{
 	private double distancia;
 	private ArrayList<String> pontosDeParada;
 	private String condicaoEstrada;
@@ -8,7 +8,7 @@ public class Rota {
 	
 	public Rota(double distancia, ArrayList<String> pontosDeParada, String condicaoEstrada, Veiculo veiculo) {
 		this.distancia = distancia;
-		this.pontosDeParada = new ArrayList<String>();
+		this.pontosDeParada = pontosDeParada;
 		this.condicaoEstrada = condicaoEstrada;
 		this.veiculo = veiculo;
 	}
@@ -74,7 +74,7 @@ public class Rota {
 		return tempo;
 	}
 	
-	public void exibirInformacoes() {
+	public void gerarRelatorio() {
 		System.out.println("Distância: "+distancia+"km");
 		System.out.println("Pontos de parada: ");
 		for(String ponto : pontosDeParada) {

@@ -1,17 +1,16 @@
-
 import java.util.ArrayList;
 
-public class OperadorLogistico {
+public class OperadorLogistico implements Relatorio{
 	private String nome;
 	private String identificacao;
 	private ArrayList<Viagem> viagensGerenciadas;
 	private ArrayList<Notificacao> notificacoes;
 
-	public OperadorLogistico(String nome, String identificacao, ArrayList<Viagem> viagensGerenciadas, ArrayList<Notificacao> notificacaos) {
+	public OperadorLogistico(String nome, String identificacao, ArrayList<Viagem> viagensGerenciadas, ArrayList<Notificacao> notificacoes) {
 		this.nome = nome;
 		this.identificacao = identificacao;
-		this.viagensGerenciadas = new ArrayList<>();
-		this.notificacoes = new ArrayList<>();
+		this.viagensGerenciadas = viagensGerenciadas;
+		this.notificacoes = notificacoes;
 	}
 
 	public String getNome() {
@@ -78,12 +77,12 @@ public class OperadorLogistico {
 		}
 	}
 
-	public void exibirInformacoes() {
+	public void gerarRelatorio() {
 		System.out.println("Nome: "+nome);
 		System.out.println("Documento de identificacao: "+identificacao);
 		System.out.println("Viagens Gerenciadas: ");
 		for(Viagem viagem : viagensGerenciadas) {
-			System.out.println("  - Viagem de"+viagem.getOrigem()+" a "+viagem.getDestino());
+			System.out.println("  - Viagem de "+viagem.getOrigem()+" a "+viagem.getDestino());
 		}
 		System.out.println("Notificações: ");
 		for(Notificacao notificacao : notificacoes) {

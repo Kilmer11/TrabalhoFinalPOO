@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class Viagem {
+public class Viagem implements Relatorio{
 	private Veiculo veiculo;
 	private Rota rota;
 	private String origem;
@@ -54,7 +54,7 @@ public class Viagem {
 		this.veiculo = veiculo;
 	}
 
-	public void exibirInformacoes() {
+	public void gerarRelatorio() {
         System.out.println("Origem: "+origem);
         System.out.println("Destino: "+destino);
         System.out.println("Data de saida: "+dataSaida);

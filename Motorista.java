@@ -1,17 +1,20 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Motorista implements Relatorio {
     private String nome;
     private String numeroCNH;
     private int experiencia;
     private LocalDate dataExpiracaoCNH;
+    private ArrayList<Veiculo> veiculos;
     private boolean cnhValida;
 
-    public Motorista(String nome, String numeroCNH, int experiencia, LocalDate dataExpiracaoCNH) {
+    public Motorista(String nome, String numeroCNH, int experiencia, LocalDate dataExpiracaoCNH, ArrayList<Veiculo> veiculos) {
         this.nome = nome;
         this.numeroCNH = numeroCNH;
         this.experiencia = experiencia;
         this.dataExpiracaoCNH = dataExpiracaoCNH;
+        this.veiculos = veiculos;
         this.cnhValida = validarCNH(); 
     }
     public String getNome() {
@@ -55,6 +58,14 @@ public class Motorista implements Relatorio {
         return cnhValida;
     }
 
+    public ArrayList<Veiculo> getVeiculos() {
+        return veiculos;
+    }
+
+    public void setVeiculos(ArrayList<Veiculo> veiculos) {
+        this.veiculos = veiculos;
+    }
+    
     // Método para validar a CNH com base na data de expiração
     public boolean validarCNH() {
         LocalDate dataAtual = LocalDate.now();
@@ -69,7 +80,6 @@ public class Motorista implements Relatorio {
     
     @Override
     public void gerarRelatorio() {
-        System.out.println("=== Relatório do Motorista ===");
         System.out.println("Nome: " + nome);
         System.out.println("Número da CNH: " + numeroCNH);
         System.out.println("Experiência: " + experiencia + " anos");
@@ -77,3 +87,6 @@ public class Motorista implements Relatorio {
         System.out.println("CNH Válida: " + (cnhValida ? "Sim" : "Não"));
     }
 }
+
+
+

@@ -1,4 +1,4 @@
-public abstract class Carga {
+public abstract class Carga implements Relatorio{
 	private String tipo;
 	private double valor;
 	private double peso;
@@ -42,5 +42,11 @@ public abstract class Carga {
 	}
 	
 	public abstract void calcularSeguro();
+
+	public void gerarRelatorio(){
+		System.out.println("Tipo: " + tipo);
+		System.out.println("Valor: " + valor);
+		System.out.println("Peso: " + peso);
+	}
 	
 }

@@ -1,4 +1,4 @@
-public abstract class Veiculo {
+public abstract class Veiculo implements Relatorio{
     private String placa;
     private double capacidade;
     private String tipoCombustivel;
@@ -63,7 +63,7 @@ public abstract class Veiculo {
 
 	public abstract void custoManutencao();
     
-    public void exibirInformacoes() {
+    public void gerarRelatorio() {
     	System.out.println("Placa: " + placa);
     	System.out.println("Capacidade: " + capacidade + "Kg");
     	System.out.println("Tipo de combustivel: " + tipoCombustivel);

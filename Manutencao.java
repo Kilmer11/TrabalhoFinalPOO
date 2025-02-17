@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class Manutencao {
+public class Manutencao implements Relatorio{
 	private Veiculo veiculo;
 	private LocalDate data;
 	private String tipoManutencao;
@@ -49,7 +49,7 @@ public class Manutencao {
 		this.custo = custo;
 	}
 	
-	public void exebirInformacoes(){
+	public void gerarRelatorio(){
 		System.out.println("Data: " + data);
 		System.out.println("Tipo de manutenção: " + tipoManutencao);
 		System.out.println("Custo: " + custo);

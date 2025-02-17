@@ -1,6 +1,6 @@
-public class cargaFragil extends Carga{
+public class CargaFragil extends Carga{
 
-	public cargaFragil(String tipo, double valor, double peso) {
+	public CargaFragil(String tipo, double valor, double peso) {
 		super(tipo, valor, peso);
 	}
 

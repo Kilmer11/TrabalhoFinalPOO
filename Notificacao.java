@@ -1,4 +1,3 @@
-
 public abstract class Notificacao {
 	private String titulo;
 	private String mensagem;

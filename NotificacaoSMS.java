@@ -1,4 +1,3 @@
-
 public class NotificacaoSMS extends Notificacao {
 	private int numeroRemetente;
 	
